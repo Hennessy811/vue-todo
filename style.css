@@ -1,0 +1,70 @@
+@font-face {
+  font-family: GothamRounded;
+  src: url('./fonts/GothamRounded-Book.otf');
+}
+
+body {
+  background-color: #f0efe9;
+}
+
+#app7 {
+  width: 60%;
+}
+
+ul {
+  z-index: 1;
+  background-color: #fff;
+  max-width: 480px;
+  margin: 15vh auto 0;
+  font-family: GothamRounded, sans-serif;
+  list-style-type: none;
+  padding: 45px 105px;
+  height: 50vh;
+  overflow: auto;
+}
+
+li {
+  margin: 0;
+  padding: 25px 0;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li div {
+  margin-right: 40px;
+}
+
+li.incompleted {
+  color: #bdc0ca;
+}
+
+li.completed {
+  color: #3e434f;
+}
+
+.add-new-block {
+  display: flex;
+  text-align: center;
+  margin-top: -45px;
+  justify-content: center;
+}
+
+.add-new-block img {
+  width: 90px;
+  height: 90px;
+  background: transparent;
+  border: none;
+  z-index: 999;
+}
+
+.add-new-block input {
+  margin-top: 45px;
+  padding: 0 105px;
+  width: 480px;
+  height: 50px;
+  font-size: 22px;
+  color: #bdc0ca;
+  border: 2px solid #bdc0ca70;
+}

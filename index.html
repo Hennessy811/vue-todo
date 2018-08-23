@@ -7,15 +7,42 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <link rel="stylesheet" href="style.less">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app-7">
-        <ol>
-            <li :class="{ completed: item.completed, incompleted: !item.completed }" v-on:click='removeItem' v-for='item in groceryList' :id='item.id'>{{ item.title }} <button>Mark as <span v-if='item.completed'>incompleted</span><span v-if='!item.completed'>completed</span></button></li>
-        </ol>
-        <input type="text" v-if='isAddingNew' v-on:keyup.enter='addItem' v-model='usrInput'>
-        <button v-if='!isAddingNew' v-on:click='isAddingNew = !isAddingNew'>Add new</button>
+        <ul>
+            <li 
+            :class="{ completed: item.completed, incompleted: !item.completed }" 
+            v-for='item in groceryList' 
+            :id='item.id'>
+               
+            <div><span class="text">{{ item.title }}</span></div>
+            <img v-if='!item.completed' v-on:click='item.completed = !item.completed' src="icons/incompleted-icon.svg" alt="">
+            <img v-if='item.completed' v-on:click='item.completed = !item.completed' src="icons/completed-icon-1.svg" alt="">
+            <!-- <button 
+                v-on:click='item.completed = !item.completed'>
+                Mark as 
+                    <span v-if='item.completed'>incompleted </span>
+                    <span v-if='!item.completed'>completed </span>
+                </button> -->
+            </li>
+
+        </ul>
+        <div class="add-new-block">
+                <input 
+                type="text" 
+                v-if='isAddingNew' 
+                v-on:keyup.enter='addItem' 
+                v-on:keyup.esc='isAddingNew = false' 
+                v-model='usrInput'>
+                <img src="icons/addNew.png" 
+                class="addNew"
+                v-if='!isAddingNew' 
+                v-on:click='isAddingNew = !isAddingNew'
+                alt="">
+            </div>
+        
       </div>
 
     <script src="index.js"></script>
