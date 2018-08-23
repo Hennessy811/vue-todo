@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.less">
+</head>
+<body>
+    <div id="app-7">
+        <ol>
+            <li :class="{ completed: item.completed, incompleted: !item.completed }" v-on:click='removeItem' v-for='item in groceryList' :id='item.id'>{{ item.title }} <button>Mark as <span v-if='item.completed'>incompleted</span><span v-if='!item.completed'>completed</span></button></li>
+        </ol>
+        <input type="text" v-if='isAddingNew' v-on:keyup.enter='addItem' v-model='usrInput'>
+        <button v-if='!isAddingNew' v-on:click='isAddingNew = !isAddingNew'>Add new</button>
+      </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
