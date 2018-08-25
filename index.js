@@ -14,9 +14,11 @@ var app7 = new Vue({
     },
     methods: {
         addItem: function () {
-            this.usrInput ? this.groceryList.push({ id: 3, title: this.usrInput }) : console.log('type something')
+            this.usrInput ? this.groceryList.push({ id: 3, title: this.usrInput, completed: false }) : console.log('type something')
             this.isAddingNew = false;
             this.sendUpdate();
+            this.usrInput = '';
+            console.log(this.groceryList)
         },
         removeItem: function() {
             this.groceryList = this.groceryList.filter(function(item, i, arr) {

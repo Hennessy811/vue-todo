@@ -15,17 +15,10 @@
             <li 
             :class="{ completed: item.completed, incompleted: !item.completed }" 
             v-for='item in groceryList' 
-            :id='item.id'>
-               
-            <div><span class="text">{{ item.title }}</span></div>
-            <img v-if='!item.completed' v-on:click='item.completed = !item.completed' src="icons/incompleted-icon.svg" alt="">
-            <img v-if='item.completed' v-on:click='item.completed = !item.completed' src="icons/completed-icon-1.svg" alt="">
-            <!-- <button 
-                v-on:click='item.completed = !item.completed'>
-                Mark as 
-                    <span v-if='item.completed'>incompleted </span>
-                    <span v-if='!item.completed'>completed </span>
-                </button> -->
+            :id='item.id'>               
+                <div><span class="text">{{ item.title }}</span></div>
+                <img v-if='!item.completed' v-on:click='item.completed = !item.completed' src="icons/incompleted-icon.svg" alt="">
+                <img v-if='item.completed' v-on:click='item.completed = !item.completed' src="icons/completed-icon-1.svg" alt="">
             </li>
 
         </ul>
